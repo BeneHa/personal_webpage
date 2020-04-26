@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_title_text %}Benedikt Häuser - Contact{% endblock %}
+
+{% block additional_styling %}
+<link rel="stylesheet" href="{% static 'css/contact_page.css' %}">
+
+{% endblock additional_styling %}
+
+{% block content %}
+
+<div class="row" id="contact_general_block">
+    <div class="col">
+        <h1 class="pt-3">Contact</h1>
+        <p>You want to get in touch with me? Here is my contact information:</p>
+        <p>Private: <a href="mailto:benedikt.haeuser@outlook.com">benedikt.haeuser@outlook.com</a>.</p>
+        <p>Business: <a href="mailto:benedikt.haeuser@daimler.com">benedikt.haeuser@daimler.com</a>.</p>
+    </div>
+</div>
+
+<div class="row" id="contact_channels_block">
+    <div class="col">
+        <h3>On other channels</h3>
+        <p>Here are some other channels where you can find me:</p>
+
+        <div class="row">
+
+            <div class="col">
+                {% for cont_it in contact_items %}
+                <a href={{ cont_it.link }}>
+                    <img src={{ cont_it.picture.url }} class="img-fluid" id="logo_pic">
+                </a>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

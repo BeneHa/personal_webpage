@@ -1,0 +1,35 @@
+{% extends "base_list_page.html" %}
+
+{% load static %}
+
+{% block page_title_text %}Benedikt Häuser - Business{% endblock %}
+
+{% block list_name %}Business{% endblock %}
+
+{% block list_description %}Here I give an overview of where I have worked and in what positions.
+I also include my university studies.{% endblock %}
+
+{% block width_col_1 %}style="width: 25%"{% endblock %}
+{% block width_col_2 %}style="width: 75%"{% endblock %}
+
+{% block img_src %}<img class="mx-auto d-block" src="{{ item.picture.url }}" width="100%">{% endblock %}
+{% block img_desc %}<h2>{{ item.company_name }}</h2>
+
+<h4>{{ item.position }}</h4>
+{% if item.current_flag %}
+<p>Since {{ item.start_date|date:"F Y" }}</p>
+{% else %}
+<p>From {{ item.start_date|date:"F Y" }} to {{ item.end_date|date:"F Y" }}</p>
+{% endif %}
+<p class="justify_text">{{ item.detailed_description }}</p>{% endblock img_desc %}
+
+{% block information_below_table %}
+<div class="row">
+    <div class="col">
+        <p>You can download a PDF version of my CV here: <a
+                href="{% static 'static_media/documents/cv.pdf' %}">Download</a></p>
+
+    </div>
+</div>
+
+{% endblock information_below_table %}

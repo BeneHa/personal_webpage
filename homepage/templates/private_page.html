@@ -1,0 +1,39 @@
+{% extends "base_list_page.html" %}
+
+{% load static %}
+
+{% block additional_styling %}
+<link rel="stylesheet" href="{% static 'css/private_page.css' %}">{% endblock additional_styling %}
+
+{% block page_title_text %}Benedikt Häuser - Personal{% endblock page_title_text %}
+
+{% block list_name %}Hobbies{% endblock %}
+
+{% block list_description %}Yes, I have a life outside of work. And even away from my computer.
+Here you can see what I am doing in those times.{% endblock %}
+
+{% block width_col_1 %}style="width: 40%"{% endblock %}
+{% block width_col_2 %}style="width: 60%"{% endblock %}
+
+{% block img_src %}
+<div class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for pic in item.picture.all %}
+        {% if forloop.first %}
+        <div class="carousel-item active">
+            {% else %}
+            <div class="carousel-item">
+                {% endif %}
+                <img class="mx-auto d-block" src={{ pic.picture.url }} id="carousel_picture">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+    {% block img_desc %}
+    <h3>{{ item.name }}</h3>
+    <p class="justify_text">{{ item.description }}</p>
+    {% endblock img_desc %}

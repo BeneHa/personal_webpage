@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'static_media/other_icons/favicon.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block additional_styling %}{% endblock %}
+
+    <title>{% block page_title_text %}{% endblock %}</title>
+</head>
+
+
+<body id="body">
+<div class="fluid-container" id="page_container">
+    <section class="row sticky-top ml-0 mr-0 shrink_big transition_04" id="sticky_top_block">
+        <div class="col pl-0 pr-0" id="top_col">
+            <div class="row ml-0 mr-0 align-items-center" id="div_navbar">
+                <div class="col-12 pl-0 pr-0">
+                    <nav class="navbar navbar-expand-sm navbar-light navbar-toggleable" id="top_navbar">
+                        <a class="navbar-brand">Navigation</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active" id="nav_home">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item" id="nav_business">
+                                    <a class="nav-link" href="/content/business">Business</a>
+                                </li>
+                                <li class="nav-item" id="nav_skills">
+                                    <a class="nav-link" href="/content/skills">Skills</a>
+                                </li>
+                                <li class="nav-item" id="nav_personal">
+                                    <a class="nav-link" href="/content/personal">Personal</a>
+                                </li>
+                                <li class="nav-item" id="nav_contact">
+                                    <a class="nav-link" href="/content/contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="div_top_portrait">
+                <img id="top_portrait" src="{% static 'static_media/personal_pictures/photo_lowres_bhaeuse.jpg' %}"
+                     class="mx-auto d-block img-fluid top_img_big transition_04">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="row ml-0 mr-0" id="content_row">
+        <div class="col" id="content_col">
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+</div>
+
+
+<footer id="footer" class="footer">
+    <div class="fluid-container ml-0 mr-0 pl-0 pr-0" id="footer_container">
+        <div class="row justify-content-between align-items-center ml-3 mr-3 pl-0 pr-0" id="footer_row">
+            <div class="column" id="footer_text_container">
+                <p class="impressum_text"><a href="/content/contact" class="impressum_link">Contact</a></p>
+                <p class="impressum_text"><a href="/content/impressum" class="impressum_link">Impressum</a></p>
+            </div>
+            <div class="column" id="footer_image_container">
+                <a href="https://github.com/BeneHa/personal_webpage" id="footer_img_link">
+                    <img class="img-fluid" src="{% static 'static_media/other_icons/github.png' %}"
+                         id="footer_img">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

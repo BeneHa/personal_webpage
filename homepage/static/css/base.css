@@ -1,0 +1,160 @@
+:root {
+    --background: #eae7dc;
+    --brown: #d8c3a5;
+    --grey: #8e8d8a;
+    --lightred: #e98074;
+    --red: #e85a4f;
+}
+html {
+    height: 100%;
+    position: relative;
+    background-color: var(--background);
+}
+
+body {
+  background-color: var(--background);
+  min-height: 70vh;
+  position: relative;
+  margin: 0;
+}
+
+#top_col {
+    height: 100%;
+}
+
+#div_navbar {
+    background-color: var(--grey);
+}
+
+#div_top_portrait {
+    height: 75%;
+    background-color: var(--brown);
+    margin: 0;
+}
+
+#top_portrait {
+    margin: 0;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    height: 100%;
+    width: auto;
+}
+
+.transition_04 {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+}
+
+.top_img_big {
+    border-radius: 15%;
+}
+
+.top_img_small {
+    border-radius: 50%;
+}
+
+#content_row {
+    margin-top: 30vh;
+}
+
+#content_col {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-top: 3vh;
+    padding-bottom: 12vh;
+}
+
+#col_top_portrait {
+    height: 100%;
+}
+
+#sticky_top_block {
+    width: 100%;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+}
+
+.shrink_big {
+    height: 30vh;
+}
+
+.shrink_small {
+    height: 15vh;
+}
+
+
+#top_navbar {
+    background-color: var(--grey);
+
+}
+
+#top_picture_block {
+    background-color: var(--brown);
+}
+
+#github_image {
+    height: 100%;
+}
+
+#page_container {
+    width: 100%;
+    min-height: 60vh;
+    padding-bottom: 0.1vh;
+}
+
+.impressum_text {
+    font-size: 75%;
+    padding: 0;
+    margin: 0;
+}
+
+.impressum_link {
+    color: black;
+}
+
+.impressum_link:hover {
+    color: black;
+}
+
+.justify_text {
+    text-align: justify;
+}
+
+#footer {
+    background-color: var(--grey);
+    position: relative;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+}
+
+#footer_container {
+    height: 100%;
+}
+
+#footer_row {
+    height: 100%;
+}
+
+#footer_text_container {
+}
+
+#footer_image_container {
+    height: 75%;
+}
+
+#footer_img_link {
+}
+
+#footer_img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+#footer_image_link {
+    align-items: center;
+    justify-content: center;
+}

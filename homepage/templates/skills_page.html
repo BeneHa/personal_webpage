@@ -1,0 +1,14 @@
+{% extends "base_list_page.html" %}
+
+{% block page_title_text %}Benedikt Häuser - Skills{% endblock %}
+
+{% block list_name %}Skills{% endblock %}
+
+{% block list_description %}On this page I list my relevant skills.{% endblock %}
+
+{% block width_col_1 %}style="width: 15%"{% endblock %}
+{% block width_col_2 %}style="width: 85%"{% endblock %}
+
+{% block img_src %}<img class="mx-auto d-block" src={{ item.picture.url }} width="100%">{% endblock %}
+{% block img_desc %}<p class="justify_text">{{ item.description }}</p>{% endblock img_desc %}
+
