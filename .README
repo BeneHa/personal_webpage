@@ -1,0 +1,5 @@
+Repo for my personal webpage at benedikt-haeuser.com
+
+Framework: Django
+Deployment: Heroku
+Static files: Azure BLOB store, served with Gunicorn

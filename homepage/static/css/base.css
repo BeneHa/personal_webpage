@@ -47,7 +47,7 @@ body {
 }
 
 .top_img_big {
-    border-radius: 15%;
+    border-radius: 25%;
 }
 
 .top_img_small {
@@ -157,4 +157,8 @@ body {
 #footer_image_link {
     align-items: center;
     justify-content: center;
+}
+
+.img_padding {
+    padding: 10%;
 }

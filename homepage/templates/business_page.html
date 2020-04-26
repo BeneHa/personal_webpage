@@ -12,7 +12,7 @@ I also include my university studies.{% endblock %}
 {% block width_col_1 %}style="width: 25%"{% endblock %}
 {% block width_col_2 %}style="width: 75%"{% endblock %}
 
-{% block img_src %}<img class="mx-auto d-block" src="{{ item.picture.url }}" width="100%">{% endblock %}
+{% block img_src %}<img class="mx-auto d-block img-fluid img_padding" src="{{ item.picture.url }}" width="100%">{% endblock %}
 {% block img_desc %}<h2>{{ item.company_name }}</h2>
 
 <h4>{{ item.position }}</h4>
