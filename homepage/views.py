@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from homepage.models import BusinessItem, PrivateItem, ContactItem, SkillItem
+import requests, json
 
 # Create your views here.
 
@@ -11,6 +12,12 @@ def contact_page(request):
     return render(request, "contact_page.html", {"contact_items": all_contact_items})
 
 def index_page(request):
+    payload = {"browser": request.META["HTTP_USER_AGENT"],
+               "ip": request.META["REMOTE_ADDR"]}
+    url = "https://bhaeuse-webpage-functions.azurewebsites.net/api/http_trigger_index_page"
+    #url = "http://localhost:7071/api/http_trigger_index_page"
+    r = requests.post(url, data = json.dumps(payload))
+    print(r.text)
     return render(request, "home.html")
 
 def business_page(request):
