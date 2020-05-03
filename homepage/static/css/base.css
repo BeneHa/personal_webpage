@@ -1,10 +1,11 @@
 :root {
-    --background: #eae7dc;
-    --brown: #d8c3a5;
-    --grey: #8e8d8a;
-    --lightred: #e98074;
-    --red: #e85a4f;
+    --background: #edf2f4;
+    --brown: #2b2d42;
+    --grey: #8d99ae;
+    --lightred: #ef233c;
+    --red: #d90429;
 }
+
 html {
     height: 100%;
     position: relative;
