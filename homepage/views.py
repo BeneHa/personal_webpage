@@ -8,7 +8,8 @@ import os
 
 def send_tracking_data(page_name, request):
     #Get real client IP instead of Heroku-internal IP
-    ip_address = request.headers["HTTP_X_FORWARDED_FOR"]
+    ip_address = request.get_host()
+    print(ip_address)
 
     ipstack_api_key = os.environ["IPSTACK_API_KEY"]
     ip_information = requests.post(f"http://api.ipstack.com/{ip_address}?access_key={ipstack_api_key}")
