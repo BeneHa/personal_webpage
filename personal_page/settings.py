@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "homepage",
     "storages",
-    "django_user_agents"
+    #"django_user_agents"
 ]
 
 MIDDLEWARE = [
@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_user_agents.middleware.UserAgentMiddleware"
+    #"django_user_agents.middleware.UserAgentMiddleware"
 ]
 
 ROOT_URLCONF = 'personal_page.urls'

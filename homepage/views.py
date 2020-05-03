@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from homepage.models import BusinessItem, PrivateItem, ContactItem, SkillItem
 import requests
 import json
-import django_user_agents
 
 # Create your views here.
 
