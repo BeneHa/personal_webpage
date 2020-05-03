@@ -6,19 +6,20 @@ import json
 # Create your views here.
 
 def send_tracking_data(page_name, request):
-    payload = {
-        "page_name": page_name,
-        "browser_name": request.user_agent.browser.family,
-        "browser_version": request.user_agent.browser.version_string,
-        "os_name": request.user_agent.os.family,
-        "os_version": request.user_agent.os.version_string,
-        "device": request.user_agent.device.family,
-        "ip_address": request.META["REMOTE_ADDR"]
-    }
-    url = "https://bhaeuse-webpage-functions.azurewebsites.net/api/http_trigger_index_page"
-    #url = "http://localhost:7071/api/http_trigger_index_page"
-
-    requests.post(url, data = json.dumps(payload))
+    # payload = {
+    #     "page_name": page_name,
+    #     "browser_name": request.user_agent.browser.family,
+    #     "browser_version": request.user_agent.browser.version_string,
+    #     "os_name": request.user_agent.os.family,
+    #     "os_version": request.user_agent.os.version_string,
+    #     "device": request.user_agent.device.family,
+    #     "ip_address": request.META["REMOTE_ADDR"]
+    # }
+    # url = "https://bhaeuse-webpage-functions.azurewebsites.net/api/http_trigger_index_page"
+    # #url = "http://localhost:7071/api/http_trigger_index_page"
+    #
+    # requests.post(url, data = json.dumps(payload))
+    pass
 
 
 def redirect_to_index(request):
