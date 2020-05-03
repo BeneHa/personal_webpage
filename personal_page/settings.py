@@ -15,10 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
 if "DEBUG_DEACTIVATED" in os.environ:
     #Production settings
@@ -63,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "homepage",
     "storages",
-    #"django_user_agents"
+    "django_user_agents"
 ]
 
 MIDDLEWARE = [
@@ -75,7 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #"django_user_agents.middleware.UserAgentMiddleware"
+    "django_user_agents.middleware.UserAgentMiddleware"
 ]
 
 ROOT_URLCONF = 'personal_page.urls'
