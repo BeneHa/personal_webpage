@@ -4,11 +4,10 @@ import requests
 import json
 import os
 
-# Create your views here.
 
 def send_tracking_data(page_name, request):
     #Get real client IP instead of Heroku-internal IP
-    ip_address = request.get_host()
+    ip_address = request.META["HTTP_X_FORWARDED_FOR"]
     print(ip_address)
 
     ipstack_api_key = os.environ["IPSTACK_API_KEY"]
