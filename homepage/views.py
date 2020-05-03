@@ -2,10 +2,17 @@ from django.shortcuts import render, redirect
 from homepage.models import BusinessItem, PrivateItem, ContactItem, SkillItem
 import requests
 import json
+import os
 
 # Create your views here.
 
 def send_tracking_data(page_name, request):
+    ip_address = request.META["REMOTE_ADDR"]
+    ipstack_api_key = os.environ["IPSTACK_API_KEY"]
+
+    ip_information = requests.post(f"http://api.ipstack.com/{ip_address}?access_key={ipstack_api_key}")
+    res = ip_information.json()
+
     payload = {
         "page_name": page_name,
         "browser_name": request.user_agent.browser.family,
@@ -13,7 +20,10 @@ def send_tracking_data(page_name, request):
         "os_name": request.user_agent.os.family,
         "os_version": request.user_agent.os.version_string,
         "device": request.user_agent.device.family,
-        "ip_address": request.META["REMOTE_ADDR"]
+        "ip_address": ip_address,
+        "country_name": res["country_name"],
+        "region_name": res["region_name"],
+        "city": res["city"]
     }
     url = "https://bhaeuse-webpage-functions.azurewebsites.net/api/http_trigger_index_page"
     #url = "http://localhost:7071/api/http_trigger_index_page"
