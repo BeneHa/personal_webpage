@@ -1,0 +1,8 @@
+geckodriver.exe
+db.sqlite3
+venv
+.idea
+*.pyc
+*.bak
+data
+media
