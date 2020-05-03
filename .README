@@ -1,5 +1,8 @@
+##Webpage
+
 Repo for my personal webpage at benedikt-haeuser.com
 
-Framework: Django
-Deployment: Heroku
-Static files: Azure BLOB store, served with Gunicorn
+<b>Framework:</b> Django
+<b>Deployment:</b> Heroku
+Static files:</b> Azure BLOB store, served with Gunicorn and whitenoise
+Tracking:</b> Django send information to an Azure Function API which writes tracking information (device, browser, city) to a Azure BLOB table.
