@@ -8,11 +8,8 @@ import os
 def send_tracking_data(page_name, request):
     #Get real client IP instead of Heroku-internal IP
     ip_address = request.META["HTTP_X_FORWARDED_FOR"]
-    print(ip_address)
 
-    ipstack_api_key = os.environ["IPSTACK_API_KEY"]
-    ip_information = requests.post(f"http://api.ipstack.com/{ip_address}?access_key={ipstack_api_key}")
-    res = ip_information.json()
+
 
     payload = {
         "page_name": page_name,
@@ -21,10 +18,7 @@ def send_tracking_data(page_name, request):
         "os_name": request.user_agent.os.family,
         "os_version": request.user_agent.os.version_string,
         "device": request.user_agent.device.family,
-        "ip_address": ip_address,
-        "country_name": res["country_name"],
-        "region_name": res["region_name"],
-        "city": res["city"]
+        "ip_address": ip_address
     }
     url = "https://bhaeuse-webpage-functions.azurewebsites.net/api/http_trigger_index_page"
     #url = "http://localhost:7071/api/http_trigger_index_page"
