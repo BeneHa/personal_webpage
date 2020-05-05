@@ -1,6 +1,6 @@
 ## Webpage
 
-Repo for my personal webpage at [benedikt-haeuser.com](benedikt-haeuser.com)
+Repo for my personal webpage at [benedikt-haeuser.com](http://benedikt-haeuser.com)
 
 <b>Framework:</b> Django
 
